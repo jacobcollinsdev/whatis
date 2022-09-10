@@ -1,6 +1,6 @@
 <template>
-    <li class="py-2 px-4">
-        <a href="#">
+    <li>
+        <a href="#" class="block py-2 px-4 hover:bg-blue-600">
             <slot/>
         </a>
     </li>

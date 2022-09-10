@@ -1,5 +1,5 @@
 <template>
-    <nav class="fixed left-0 bg-blue-500 text-white w-[200px] min-h-full">
+    <nav class="fixed left-0 bg-blue-500 text-white w-[150px] min-h-full">
         <ul>
             <NavLink class="mb-16">WhatIs?</NavLink>
             <NavLink>All</NavLink>
