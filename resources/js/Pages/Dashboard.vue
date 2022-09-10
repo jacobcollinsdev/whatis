@@ -1,35 +1,35 @@
 <template>
     <Nav />
-    <main class="grid reltaive items-center justify-center min-h-screen pl-[150px]">
+    <main class="flex relative items-center justify-center min-h-screen pl-16">
 
-        <aside class="absolute text-white top-0 left-[150px] min-h-full bg-slate-400 w-[200px]">
+        <!-- <aside class="text-white min-h-screen bg-slate-400 min-w-[200px] z-0">
             <ul>
                 <li class="py-2 px-4 mb-16">
-                    <input class="w-full" type="text">
+                    <input class="w-full py-1 px-2 rounded" placeholder="Search..." type="text">
                 </li>
                 <li v-for="n in 8" key="n">
-                    <a href="#" class="block py-2 px-4">
-                        <h3>Interface</h3>
+                    <a href="#" class="block py-2 px-4 hover:bg-slate-500">
+                        <h3 class="font-serif font-bold">Interface</h3>
                         <p class="text-sm">Lorem ipsum dolor, sit amet...</p>
                     </a>
                 </li>
             </ul>
-        </aside> 
+        </aside>  -->
 
-        <div class="max-w-[800px]">
-            <span>Today's Keyword is:</span>
-            <h1 class="text-8xl text-blue-500 mb-4">Trait</h1>
-            <span class="block w-1/2 bg-blue-500 h-0.5 mb-8"></span>
-            <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolorem dicta laudantium ducimus omnis cum nesciunt ratione dolores recusandae? Iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque vel, rem accusantium culpa necessitatibus nemo beatae voluptatem eligendi quo iusto.</p>
+        <div class="grid items-center justify-center w-full">
+            <Keyword />
         </div>
+
+        
     </main>
 </template>
 
 <script>
     import Nav from '../Shared/Nav.vue';
+    import Keyword from './Keyword.vue';
 
     export default {
-        components: { Nav },
+        components: { Nav, Keyword },
         props: {}
     }
 </script>
