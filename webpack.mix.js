@@ -1,5 +1,15 @@
 const mix = require('laravel-mix');
 
+const path = require('path')
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            ziggy: path.resolve('vendor/tightenco/ziggy/dist'),
+        },
+    },
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return inertia('Dashboard');
-});
+})->name('dashboard');
 
 Route::resource('keywords', KeywordController::class);

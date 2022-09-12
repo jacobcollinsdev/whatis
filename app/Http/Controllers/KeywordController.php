@@ -40,16 +40,14 @@ class KeywordController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|unique:keywords|max:255',
-            'body' => 'required',
+            'description' => 'required|min:15',
         ]);
 
-        dd($validated);
+        // dd(($validated));
         
-        // Keyword::create(
-        
-        // );
+        Keyword::create($validated);
 
-        return Redirect::route('/');
+        return Redirect::route('dashboard');
     }
 
     /**

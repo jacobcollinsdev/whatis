@@ -1,5 +1,5 @@
 <template>
-    <Nav />
+    <Nav :errors="errors"/>
     <main class="flex relative items-center justify-center min-h-screen pl-16">
 
         <!-- <aside class="text-white min-h-screen bg-slate-400 min-w-[200px] z-0">
@@ -30,6 +30,8 @@
 
     export default {
         components: { Nav, Keyword },
-        props: {}
+        props: {
+            errors: Object
+        }
     }
 </script>
