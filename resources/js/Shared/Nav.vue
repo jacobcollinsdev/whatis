@@ -3,43 +3,61 @@
         <ul>
             <NavLink class="mb-16 font-bold text-2xl">?</NavLink>
             <NavLink>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
-                </svg>
+                <List />
             </NavLink>
             <NavLink>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                </svg>
+                <Favourite />
             </NavLink>
             <NavLink @click="showModal">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <Add />
             </NavLink>
         </ul>
     </nav>
     <Modal
       v-show="isModalVisible"
       @close="closeModal"
-    />
+    >
+        <template v-slot:header>
+            Add Keyword
+        </template>
+
+        <template v-slot:body>
+            <form action="" class="mb-4">
+
+                <div class="mb-4">
+                    <label for="name">Name</label> <br/>
+                    <input type="text" name="name" id="name" class="border-2 border-gray-200 p-2 w-full rounded ">
+                </div>
+
+                <div>
+                    <label for="description">Description</label> <br/>
+                    <textarea name="description" id="description" cols="30" rows="10" class="border border-gray-200 w-full"></textarea>
+                </div>
+
+            </form>
+        </template>
+
+        <template v-slot:footer>
+            <div class="flex justify-between gap-8">
+                <button type="button" @click="closeModal" class="py-2 w-full bg-gray-100 hover:bg-gray-200">Cancel</button>
+                <button type="button" class="py-2 w-full bg-emerald-700 hover:bg-emerald-800 text-white">Add</button>
+            </div>
+        </template>
+    </Modal>
 </template>
 
 <script>
     import NavLink from "./NavLink.vue";
     import Modal from "../Components/Modal.vue";
+    import List from "../Icons/List.vue";
+    import Favourite from "../Icons/Favourite.vue";
+    import Add from "../Icons/Add.vue";
 
     export default {
-        components: { NavLink, Modal },
+        components: { NavLink, Modal, List, Favourite, Add },
         data() {
             return {
-                isModalVisible: false,
+                isModalVisible: true,
             };
         },
         methods: {
