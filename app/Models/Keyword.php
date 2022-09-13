@@ -12,5 +12,6 @@ class Keyword extends Model
     protected $fillable = [
         'name',
         'description',
+        'favourite'
     ];
 }

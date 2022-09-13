@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KeywordController;
 use App\Models\Keyword;
 use Illuminate\Support\Facades\Route;
@@ -15,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return inertia('Dashboard');
-})->name('dashboard');
-
 Route::resource('keywords', KeywordController::class);
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');;

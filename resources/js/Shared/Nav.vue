@@ -67,7 +67,7 @@
         components: { NavLink, Modal, List, Favourite, Add, Editor },
         data() {
             return {
-                isModalVisible: true,
+                isModalVisible: false,
             };
         },
         props: {
